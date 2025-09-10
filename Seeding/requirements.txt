@@ -1,0 +1,7 @@
+selenium
+pandas
+gspread
+oauth2client
+undetected-chromedriver==2.1.1
+pillow
+webdriver-manager
