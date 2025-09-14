@@ -1,0 +1,589 @@
+{
+  "teams": {
+    "team_1": {
+      "friends": [
+        {
+          "name": "Hoàng Việt",
+          "profile_url": "https://www.facebook.com/profile.php?id=61577175691677"
+        },
+        {
+          "name": "Yen Vo Hoang",
+          "profile_url": "https://www.facebook.com/profile.php?id=100094246355747"
+        },
+        {
+          "name": "Tuấn Minh Bđs",
+          "profile_url": "https://www.facebook.com/tuan.minh.b.s.2025"
+        },
+        {
+          "name": "Nguyễn Hữu Lý",
+          "profile_url": "https://www.facebook.com/tot.nghiep.le.2024"
+        },
+        {
+          "name": "Lê Thảo",
+          "profile_url": "https://www.facebook.com/profile.php?id=100090315881287"
+        },
+        {
+          "name": "Nhà Đất Phát Đạt",
+          "profile_url": "https://www.facebook.com/nha.at.phat.at.778432"
+        },
+        {
+          "name": "Tuan Minh",
+          "profile_url": "https://www.facebook.com/profile.php?id=100089581063415"
+        },
+        {
+          "name": "Vũ Khánh",
+          "profile_url": "https://www.facebook.com/vu.khanh.808537"
+        },
+        {
+          "name": "Huyên Nguyễn Bđs",
+          "profile_url": "https://www.facebook.com/huyen.nguyen.b.s"
+        },
+        {
+          "name": "Khoảng Lặng",
+          "profile_url": "https://www.facebook.com/khoang.lang.673746"
+        },
+        {
+          "name": "Bđs Miền Đông",
+          "profile_url": "https://www.facebook.com/b.s.mien.ong.2025"
+        },
+        {
+          "name": "Bđs Đức Huệ",
+          "profile_url": "https://www.facebook.com/profile.php?id=100082541415770"
+        },
+        {
+          "name": "Huy Anh Bđs\n1 mutual friend",
+          "profile_url": "https://www.facebook.com/profile.php?id=100082315142071"
+        },
+        {
+          "name": "Trang Trang",
+          "profile_url": "https://www.facebook.com/thuy.moc.829809"
+        },
+        {
+          "name": "Bùi Nhà Đất SG",
+          "profile_url": "https://www.facebook.com/tu.bui.131441"
+        },
+        {
+          "name": "An Đức",
+          "profile_url": "https://www.facebook.com/an.uc.806244"
+        },
+        {
+          "name": "Hồng Nhung Bđs",
+          "profile_url": "https://www.facebook.com/profile.php?id=100076139231227"
+        },
+        {
+          "name": "Hue Tran\nFollowed by 2.1K",
+          "profile_url": "https://www.facebook.com/hue.tran.314927"
+        },
+        {
+          "name": "Trịnh Văn Khánh Bđs",
+          "profile_url": "https://www.facebook.com/trinh.van.khanh.334174"
+        },
+        {
+          "name": "Lê Viết Điệp Bđs",
+          "profile_url": "https://www.facebook.com/le.viet.iep.b.s"
+        }
+      ],
+      "size": 20,
+      "current_index": 0,
+      "messages_sent": 0,
+      "last_activity": null
+    },
+    "team_2": {
+      "friends": [
+        {
+          "name": "Bđs Kỳ Sơn HB",
+          "profile_url": "https://www.facebook.com/b.s.ky.son.hb"
+        },
+        {
+          "name": "Châu Băng Sơn",
+          "profile_url": "https://www.facebook.com/Son.Chau.2k6"
+        },
+        {
+          "name": "Uyển Nhu",
+          "profile_url": "https://www.facebook.com/profile.php?id=100069381339176"
+        },
+        {
+          "name": "Thanh Bình",
+          "profile_url": "https://www.facebook.com/tran.duong.603648"
+        },
+        {
+          "name": "Sơn Tùng",
+          "profile_url": "https://www.facebook.com/son.tung.884842"
+        },
+        {
+          "name": "Nguyên Bđs Nhà Thật",
+          "profile_url": "https://www.facebook.com/nguyen.b.s.nha.that"
+        },
+        {
+          "name": "Thuỳ Nhung Bđs",
+          "profile_url": "https://www.facebook.com/con.thuy.5437"
+        },
+        {
+          "name": "Vũ Land",
+          "profile_url": "https://www.facebook.com/vanvu.pham.568847"
+        },
+        {
+          "name": "Mai Trí Thức",
+          "profile_url": "https://www.facebook.com/thuc.maitri.31"
+        },
+        {
+          "name": "Mạnh Bđs",
+          "profile_url": "https://www.facebook.com/manh.b.s.159914"
+        },
+        {
+          "name": "Nguyễn Lan",
+          "profile_url": "https://www.facebook.com/profile.php?id=100055565175739"
+        },
+        {
+          "name": "Le Long Bđs",
+          "profile_url": "https://www.facebook.com/le.long.b.s"
+        },
+        {
+          "name": "Bàn Văn Thắng",
+          "profile_url": "https://www.facebook.com/thang.banvan.587"
+        },
+        {
+          "name": "Nam Pm",
+          "profile_url": "https://www.facebook.com/profile.php?id=100042800559256"
+        },
+        {
+          "name": "Thanh Sơn",
+          "profile_url": "https://www.facebook.com/profile.php?id=100038149890378"
+        },
+        {
+          "name": "Tấn Huyên\nFollowed by 2.5K",
+          "profile_url": "https://www.facebook.com/tan.huyen.262430"
+        },
+        {
+          "name": "Việt Thắng Bđs",
+          "profile_url": "https://www.facebook.com/profile.php?id=100031807300698"
+        },
+        {
+          "name": "Bđs Hưng Phát",
+          "profile_url": "https://www.facebook.com/cuong.vovancuong.3152"
+        },
+        {
+          "name": "Ngan Hang Bds",
+          "profile_url": "https://www.facebook.com/nganhang.bds.3"
+        },
+        {
+          "name": "ホアン タイン",
+          "profile_url": "https://www.facebook.com/victorys.love"
+        }
+      ],
+      "size": 20,
+      "current_index": 0,
+      "messages_sent": 0,
+      "last_activity": null
+    },
+    "team_3": {
+      "friends": [
+        {
+          "name": "Hải Land",
+          "profile_url": "https://www.facebook.com/hai.land.416345"
+        },
+        {
+          "name": "Văn Bđs",
+          "profile_url": "https://www.facebook.com/van.b.s.419408"
+        },
+        {
+          "name": "Tất Thành",
+          "profile_url": "https://www.facebook.com/profile.php?id=100026720992098"
+        },
+        {
+          "name": "Nhơn Bđs Nhà Phố",
+          "profile_url": "https://www.facebook.com/minhanh.omc"
+        },
+        {
+          "name": "Bđs Thái Bình",
+          "profile_url": "https://www.facebook.com/b.s.thai.binh.887895"
+        },
+        {
+          "name": "Nguyễn Vinh Chiến",
+          "profile_url": "https://www.facebook.com/chien.vi.92317121"
+        },
+        {
+          "name": "Trang Vệ",
+          "profile_url": "https://www.facebook.com/ve.trang.330"
+        },
+        {
+          "name": "Nguyễn Hữu Nhật\n1 mutual friend",
+          "profile_url": "https://www.facebook.com/nguyen.huunhat.520"
+        },
+        {
+          "name": "Bđs Khanh Nguyen",
+          "profile_url": "https://www.facebook.com/khanh.nguyen.818231"
+        },
+        {
+          "name": "Nguyễn Thi",
+          "profile_url": "https://www.facebook.com/profile.php?id=100006442083410"
+        },
+        {
+          "name": "Dao Dinh Bđs",
+          "profile_url": "https://www.facebook.com/dao.dinh.b.s"
+        },
+        {
+          "name": "Ngô Tấn Quả",
+          "profile_url": "https://www.facebook.com/ngotan.qua.1"
+        },
+        {
+          "name": "Nam Tước",
+          "profile_url": "https://www.facebook.com/Vinfasthadong948"
+        },
+        {
+          "name": "Bin Đất",
+          "profile_url": "https://www.facebook.com/profile.php?id=61579276319860"
+        },
+        {
+          "name": "Bđs Thủ Đô",
+          "profile_url": "https://www.facebook.com/profile.php?id=61579027523485"
+        },
+        {
+          "name": "Ngọc Bảo",
+          "profile_url": "https://www.facebook.com/profile.php?id=61578974062583"
+        },
+        {
+          "name": "Giang Bds",
+          "profile_url": "https://www.facebook.com/profile.php?id=61578958821474"
+        },
+        {
+          "name": "Bds Truc",
+          "profile_url": "https://www.facebook.com/profile.php?id=61578914895284"
+        },
+        {
+          "name": "Huyền ProHouzing Hue\n1 mutual friend",
+          "profile_url": "https://www.facebook.com/huyen.prohouzing.hue"
+        },
+        {
+          "name": "Phạm Linh",
+          "profile_url": "https://www.facebook.com/profile.php?id=61578860459724"
+        }
+      ],
+      "size": 20,
+      "current_index": 0,
+      "messages_sent": 0,
+      "last_activity": null
+    },
+    "team_4": {
+      "friends": [
+        {
+          "name": "Nguyễn Đức Land",
+          "profile_url": "https://www.facebook.com/profile.php?id=61578839003660"
+        },
+        {
+          "name": "Trung Hiếu",
+          "profile_url": "https://www.facebook.com/profile.php?id=61578754221954"
+        },
+        {
+          "name": "Bđs Quốc Trường",
+          "profile_url": "https://www.facebook.com/profile.php?id=61578615988649"
+        },
+        {
+          "name": "Kiều Diễm",
+          "profile_url": "https://www.facebook.com/profile.php?id=61578570012405"
+        },
+        {
+          "name": "Diem My Duong\n1 mutual friend",
+          "profile_url": "https://www.facebook.com/profile.php?id=61578559589842"
+        },
+        {
+          "name": "Yến Linh",
+          "profile_url": "https://www.facebook.com/profile.php?id=61578553024919"
+        },
+        {
+          "name": "Tuyển Dụng Lao Động\n1 mutual friend",
+          "profile_url": "https://www.facebook.com/tuyen.dung.lao.ong.390388"
+        },
+        {
+          "name": "Nhật Ánh",
+          "profile_url": "https://www.facebook.com/profile.php?id=61578360584103"
+        },
+        {
+          "name": "Hiệp Bds Yêu Thương",
+          "profile_url": "https://www.facebook.com/hiep.bds.yeu.thuong"
+        },
+        {
+          "name": "Anh Minh Sáu Bđs",
+          "profile_url": "https://www.facebook.com/profile.php?id=61578166194218"
+        },
+        {
+          "name": "Phu Thanh Bđs",
+          "profile_url": "https://www.facebook.com/profile.php?id=61578160746037"
+        },
+        {
+          "name": "Thắng Bđs",
+          "profile_url": "https://www.facebook.com/profile.php?id=61578129481849"
+        },
+        {
+          "name": "Bđs Sang Nguyễn",
+          "profile_url": "https://www.facebook.com/profile.php?id=61578081321815"
+        },
+        {
+          "name": "Minh Sáu Bđs",
+          "profile_url": "https://www.facebook.com/profile.php?id=61578000242579"
+        },
+        {
+          "name": "Bds Minh Sơn",
+          "profile_url": "https://www.facebook.com/profile.php?id=61577860821171"
+        },
+        {
+          "name": "Bđs Mê Linh",
+          "profile_url": "https://www.facebook.com/profile.php?id=61577765288347"
+        },
+        {
+          "name": "Bđs Thổ Cư\n1 mutual friend",
+          "profile_url": "https://www.facebook.com/profile.php?id=61577693984447"
+        },
+        {
+          "name": "Bđs Phuc Thịnh",
+          "profile_url": "https://www.facebook.com/profile.php?id=61577627194509"
+        },
+        {
+          "name": "Thuỳ Nguyễn Bđs",
+          "profile_url": "https://www.facebook.com/profile.php?id=61577596090155"
+        },
+        {
+          "name": "Bds Lục Nam",
+          "profile_url": "https://www.facebook.com/profile.php?id=61577583802767"
+        }
+      ],
+      "size": 20,
+      "current_index": 0,
+      "messages_sent": 0,
+      "last_activity": null
+    },
+    "team_5": {
+      "friends": [
+        {
+          "name": "Hoàng Sỹ",
+          "profile_url": "https://www.facebook.com/profile.php?id=61577391568883"
+        },
+        {
+          "name": "Tân Duy Bds",
+          "profile_url": "https://www.facebook.com/profile.php?id=61577334598903"
+        },
+        {
+          "name": "Bđs Sang Khang",
+          "profile_url": "https://www.facebook.com/profile.php?id=61577326284195"
+        },
+        {
+          "name": "Bđs Phong Thủy",
+          "profile_url": "https://www.facebook.com/profile.php?id=61576995553573"
+        },
+        {
+          "name": "Quốc Các Bđs",
+          "profile_url": "https://www.facebook.com/profile.php?id=61576910257626"
+        },
+        {
+          "name": "Bich Ngoc",
+          "profile_url": "https://www.facebook.com/lbnqc178213"
+        },
+        {
+          "name": "Bđs Tạ Sỹ",
+          "profile_url": "https://www.facebook.com/profile.php?id=61576890631093"
+        },
+        {
+          "name": "Hoàng Bđs",
+          "profile_url": "https://www.facebook.com/profile.php?id=61576822561544"
+        },
+        {
+          "name": "Minhvuong Nguyen",
+          "profile_url": "https://www.facebook.com/profile.php?id=61576790716540"
+        },
+        {
+          "name": "Hir Kpa\n1 mutual friend",
+          "profile_url": "https://www.facebook.com/profile.php?id=61576250920999"
+        },
+        {
+          "name": "Win Win Bds",
+          "profile_url": "https://www.facebook.com/profile.php?id=61576237722132"
+        },
+        {
+          "name": "Bđs Dalat AnLand",
+          "profile_url": "https://www.facebook.com/profile.php?id=61576200579672"
+        },
+        {
+          "name": "Nam Phong Land",
+          "profile_url": "https://www.facebook.com/nam.phong.land.2025"
+        },
+        {
+          "name": "Dung Ngô",
+          "profile_url": "https://www.facebook.com/an.na.152148"
+        },
+        {
+          "name": "Đỗ Dũng Bđs",
+          "profile_url": "https://www.facebook.com/odungbs"
+        },
+        {
+          "name": "Hà Bđs",
+          "profile_url": "https://www.facebook.com/profile.php?id=61576007446796"
+        },
+        {
+          "name": "Bđs Hảo Hảo",
+          "profile_url": "https://www.facebook.com/b.s.hao.hao.2025"
+        },
+        {
+          "name": "Bđs Vũng Tàu",
+          "profile_url": "https://www.facebook.com/b.s.vung.tau.166161"
+        },
+        {
+          "name": "Hùng Trinh Bds",
+          "profile_url": "https://www.facebook.com/hung.trinh.bds.2025"
+        },
+        {
+          "name": "BĐS NLDuc",
+          "profile_url": "https://www.facebook.com/bsdnlduc"
+        }
+      ],
+      "size": 20,
+      "current_index": 0,
+      "messages_sent": 0,
+      "last_activity": null
+    },
+    "team_6": {
+      "friends": [
+        {
+          "name": "Bđs Thịnh Phát",
+          "profile_url": "https://www.facebook.com/b.s.thinh.phat.631440"
+        },
+        {
+          "name": "Thế Bảo Bđs",
+          "profile_url": "https://www.facebook.com/the.bao.b.s"
+        },
+        {
+          "name": "Đức Cảnh Bđs",
+          "profile_url": "https://www.facebook.com/uccanhbs.2025"
+        },
+        {
+          "name": "Bđs Thổ Cư",
+          "profile_url": "https://www.facebook.com/profile.php?id=61573815483322"
+        },
+        {
+          "name": "Bđs Mỹ Quyên",
+          "profile_url": "https://www.facebook.com/onquyen.2025"
+        },
+        {
+          "name": "Nguyễn Thế An",
+          "profile_url": "https://www.facebook.com/nguyen.the.an.489115"
+        },
+        {
+          "name": "Bđs Dương Nguyễn",
+          "profile_url": "https://www.facebook.com/b.s.duong.nguyen.2025"
+        },
+        {
+          "name": "Trang Tân Thịnh Phát",
+          "profile_url": "https://www.facebook.com/trang.tan.thinh.phat"
+        },
+        {
+          "name": "Đặng Tài Bđs",
+          "profile_url": "https://www.facebook.com/profile.php?id=61569680355497"
+        },
+        {
+          "name": "Giang Đại Phát Bds",
+          "profile_url": "https://www.facebook.com/trai.tim.bang.gia.639628"
+        },
+        {
+          "name": "Thế Vũ Bđs",
+          "profile_url": "https://www.facebook.com/the.vu.356218"
+        },
+        {
+          "name": "Ngọc Bđs Nhà Phố",
+          "profile_url": "https://www.facebook.com/ruby.ngoc.107687"
+        },
+        {
+          "name": "Bđs Dương Phát Land",
+          "profile_url": "https://www.facebook.com/b.s.duong.thuan.phat.2024"
+        },
+        {
+          "name": "Trần Giang Bđs\n1 mutual friend",
+          "profile_url": "https://www.facebook.com/tran.giang.b.s"
+        },
+        {
+          "name": "Bđs Vuông",
+          "profile_url": "https://www.facebook.com/b.s.vuong.2024"
+        },
+        {
+          "name": "Bđs Văn Minh",
+          "profile_url": "https://www.facebook.com/b.s.hoai.uc.954370"
+        },
+        {
+          "name": "Tuấn Vỹ\nFollowed by 3.4K",
+          "profile_url": "https://www.facebook.com/tuan.vy.42938"
+        },
+        {
+          "name": "Phạm Hiền",
+          "profile_url": "https://www.facebook.com/pham.hien.40603"
+        },
+        {
+          "name": "Bđs Lộc Phát",
+          "profile_url": "https://www.facebook.com/profile.php?id=61563026890994"
+        },
+        {
+          "name": "Thành Bđs",
+          "profile_url": "https://www.facebook.com/thanh.b.s.29194"
+        }
+      ],
+      "size": 20,
+      "current_index": 0,
+      "messages_sent": 0,
+      "last_activity": null
+    },
+    "team_7": {
+      "friends": [
+        {
+          "name": "Nhựt Bđs Vĩnh Lộc",
+          "profile_url": "https://www.facebook.com/nhut.b.s.vinh.loc"
+        },
+        {
+          "name": "Bđs Cocoland",
+          "profile_url": "https://www.facebook.com/b.s.cocoland"
+        },
+        {
+          "name": "Nguyễn Nguyễn Bđs",
+          "profile_url": "https://www.facebook.com/nguyen.nguyen.b.s.603993"
+        },
+        {
+          "name": "Lâm Bđs",
+          "profile_url": "https://www.facebook.com/profile.php?id=61556456043752"
+        },
+        {
+          "name": "Hải Đường\n1 mutual friend",
+          "profile_url": "https://www.facebook.com/profile.php?id=61556356334062"
+        },
+        {
+          "name": "Hoàng Nam Bđs",
+          "profile_url": "https://www.facebook.com/hoang.nam.b.s.776369"
+        },
+        {
+          "name": "Trung Bds Chất",
+          "profile_url": "https://www.facebook.com/profile.php?id=61553994467616"
+        },
+        {
+          "name": "Bđs Hoàng Trọng",
+          "profile_url": "https://www.facebook.com/nha.khoa.nhat.anh.2024"
+        },
+        {
+          "name": "Trần Việt Hoàng",
+          "profile_url": "https://www.facebook.com/profile.php?id=61552956201363"
+        },
+        {
+          "name": "Công Bđs Long An",
+          "profile_url": "https://www.facebook.com/cong.b.s.long.an"
+        },
+        {
+          "name": "Đặng Nam",
+          "profile_url": "https://www.facebook.com/angnam.550087"
+        }
+      ],
+      "size": 11,
+      "current_index": 0,
+      "messages_sent": 0,
+      "last_activity": null
+    }
+  },
+  "current_team": 0,
+  "last_message_date": null,
+  "daily_count": 0,
+  "total_sent": 0,
+  "failed_messages": []
+}
