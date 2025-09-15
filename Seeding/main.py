@@ -19,10 +19,12 @@ import pandas as pd
 import os
 from util import (
     addNewFriend,
-    loginFacebookWithCookies,
     acceptFriend,
     postNews,
     shareGroup,
+    loginAccount,
+    getAllFriend,
+    messageFriend,
     commentGroup,
 )
 
@@ -30,36 +32,65 @@ sys.stdout.reconfigure(encoding="utf-8")
 
 
 def main():
-    accounts = os.listdir("data/account")
+    # Initialize account manager
+    account_manager = loginAccount.getAccountManager()
+
+    # List available accounts
+    account_manager.list_accounts()  # In ra danh sách các account
+
     groups = pd.read_csv("data/group/group-test.csv")
     content_path = "data/content/content.csv"
 
-    POST_URL = "https://www.facebook.com/share/p/19sJh6yp47/"
+    for account in account_manager.accounts:
+        print(f"[INFO] Đang xử lý tài khoản: {account['name']} ({account['username']})")
+        driver = account_manager.run_login(account_id=account["id"])
 
-    for acc in accounts:
-        cookiePath = "data/account/" + acc
-        driver = loginFacebookWithCookies.runLogin(cookiePath)
+        if driver:
+            print(f"[SUCCESS] Đăng nhập thành công cho {account['name']}")
 
-        if not driver:
-            print(f"Failed to login with cookies for account: {acc}")
-            continue
+            # Thêm bạn mới
+            # addNewFriend.run_add_friend(groups, driver, max_scroll=2, max_requests=3)
 
-        try:
-            # addNewFriend.runAddFriend(groups, driver, max_scroll=2, max_requests=3)
-            # acceptFriend.runAcceptFriend(driver=driver)
-            # postNews.runPostNews(driver=driver, groups=groups, path=content_path)
-            # shareGroup.share_to_group(
-            #     driver,
-            #     POST_URL,
+            # # Chấp nhận lời mời kết bạn
+            # print(f"[INFO] Bắt đầu chấp nhận lời mời kết bạn cho {account['name']}")
+            # acceptor = acceptFriend.FriendRequestAcceptor(driver)
+            # accept_stats = acceptor.run_accept_friend_requests(
+            #     max_accept=5,  # Chấp nhận tối đa 5 lời mời
+            #     max_scroll=2   # Scroll 2 lần để tìm lời mời
             # )
+            # print(f"[INFO] Kết quả chấp nhận lời mời: {accept_stats['successful_accepts']}/{accept_stats['total_found']} thành công")
 
-            commentGroup.comment_in_group(
-                driver, content="Test comment from bot", ls_group=groups
+            # Lấy danh sách bạn bè (chỉ chạy lần đầu hoặc khi cần cập nhật)
+            if not os.path.exists(f"data/friends/friends_{account['id']}.csv"):
+                print(f"[INFO] Bắt đầu lấy danh sách bạn bè cho {account['name']}")
+                friend_scraper = getAllFriend.FacebookFriendScraper(
+                    driver, f"data/friends/friends_{account['id']}.csv"
+                )
+                if friend_scraper.run_scraping(max_scrolls=10):
+                    friend_scraper.print_statistics()
+
+            # Nhắn tin bạn bè
+            print(f"[INFO] Bắt đầu nhắn tin bạn bè cho {account['name']}")
+            message_manager = messageFriend.MessageFriendManager(
+                friends_csv_path=f"data/friends/friends_{account['id']}.csv",
+                messages_csv_path="data/content/messages.csv",
+                progress_file=f"data/progress/message_progress_{account['id']}.json",
             )
-        except Exception as e:
-            print(f"An error occurred for account {acc}: {e}")
-        finally:
+
+            # Tạo đội nếu chưa có
+            if not message_manager.progress_data.get("teams"):
+                message_manager.create_teams(team_size=20)
+
+            # Chạy nhắn tin hàng ngày
+            message_manager.run_daily_messaging(driver, target_count=10)
+            message_manager.print_statistics()
+
+            time.sleep(5)
             driver.quit()
+        else:
+            print(f"[ERROR] Đăng nhập thất bại cho {account['name']}")
+
+        print("\n" + "=" * 30 + "\n")
 
 
 if __name__ == "__main__":
