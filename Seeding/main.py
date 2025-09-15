@@ -23,6 +23,7 @@ from util import (
     acceptFriend,
     postNews,
     shareGroup,
+    commentGroup,
 )
 
 sys.stdout.reconfigure(encoding="utf-8")
@@ -47,9 +48,13 @@ def main():
             # addNewFriend.runAddFriend(groups, driver, max_scroll=2, max_requests=3)
             # acceptFriend.runAcceptFriend(driver=driver)
             # postNews.runPostNews(driver=driver, groups=groups, path=content_path)
-            shareGroup.share_to_group(
-                driver,
-                POST_URL,
+            # shareGroup.share_to_group(
+            #     driver,
+            #     POST_URL,
+            # )
+
+            commentGroup.comment_in_group(
+                driver, content="Test comment from bot", ls_group=groups
             )
         except Exception as e:
             print(f"An error occurred for account {acc}: {e}")
