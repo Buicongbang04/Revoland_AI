@@ -1,29 +1,13 @@
-import json
-import time
-import random
 import sys
-import schedule
-import math
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.common.exceptions import TimeoutException
-from webdriver_manager.chrome import ChromeDriverManager
-from datetime import datetime
-import csv
-import pandas as pd
 import os
+import pandas as pd
+import time
 from util import (
     addNewFriend,
     acceptFriend,
     postNews,
     shareGroup,
-    loginAccount,
-    getAllFriend,
+    loginFacebookWithCookies,
     messageFriend,
     commentGroup,
 )
@@ -31,66 +15,107 @@ from util import (
 sys.stdout.reconfigure(encoding="utf-8")
 
 
-def main():
-    # Initialize account manager
-    account_manager = loginAccount.getAccountManager()
+def show_account_menu(accounts: pd.DataFrame):
+    print("\n====== DANH SÁCH TÀI KHOẢN ======")
+    for stt, (_, account) in enumerate(accounts.iterrows(), 1):
+        # account là một Series đại diện cho hàng hiện tại
+        
+        # Đảm bảo các cột acc_id, name, username tồn tại trước khi truy cập
+        acc_id = account.get('acc_id', 'N/A')
+        name = account.get('name', 'Unknown Name')
+        username = account.get('username', 'N/A')
+        
+        print(f"{stt}. ID: {acc_id} | Tên: {name} ({username})")
 
-    # List available accounts
-    account_manager.list_accounts()  # In ra danh sách các account
+    print("-1. Thoát chương trình") # Thường dùng 0 hoặc -1 cho thoát
+    return input("Chọn tài khoản để xử lý: ")
 
-    groups = pd.read_csv("data/group/group-test.csv")
-    content_path = "data/content/content.csv"
 
-    for account in account_manager.accounts:
-        print(f"[INFO] Đang xử lý tài khoản: {account['name']} ({account['username']})")
-        driver = account_manager.run_login(account_id=account["id"])
+def show_feature_menu():
+    print("\n====== MENU CHỨC NĂNG ======")
+    print("1. Thêm bạn mới")
+    print("2. Chấp nhận lời mời kết bạn")
+    print("3. Nhắn tin bạn bè")
+    print("4. Đăng bài (post news)")
+    print("5. Chia sẻ nhóm")
+    print("6. Bình luận nhóm")
+    print("0. Đăng xuất và chọn tài khoản khác")
+    return input("Chọn chức năng: ")
 
-        if driver:
-            print(f"[SUCCESS] Đăng nhập thành công cho {account['name']}")
 
-            # Thêm bạn mới
-            # addNewFriend.run_add_friend(groups, driver, max_scroll=2, max_requests=3)
+def handle_account(account, groups):
+    print(f"\n[INFO] Đang đăng nhập: {account['name']} ({account['username']})")
+    driver = loginFacebookWithCookies.runLogin(f"data/account/cookie/{account['acc_id']}.json")
 
-            # # Chấp nhận lời mời kết bạn
-            # print(f"[INFO] Bắt đầu chấp nhận lời mời kết bạn cho {account['name']}")
-            # acceptor = acceptFriend.FriendRequestAcceptor(driver)
-            # accept_stats = acceptor.run_accept_friend_requests(
-            #     max_accept=5,  # Chấp nhận tối đa 5 lời mời
-            #     max_scroll=2   # Scroll 2 lần để tìm lời mời
-            # )
-            # print(f"[INFO] Kết quả chấp nhận lời mời: {accept_stats['successful_accepts']}/{accept_stats['total_found']} thành công")
+    if not driver:
+        print(f"[ERROR] Đăng nhập thất bại cho {account['name']}")
+        return
 
-            # Lấy danh sách bạn bè (chỉ chạy lần đầu hoặc khi cần cập nhật)
-            if not os.path.exists(f"data/friends/friends_{account['id']}.csv"):
-                print(f"[INFO] Bắt đầu lấy danh sách bạn bè cho {account['name']}")
-                friend_scraper = getAllFriend.FacebookFriendScraper(
-                    driver, f"data/friends/friends_{account['id']}.csv"
-                )
-                if friend_scraper.run_scraping(max_scrolls=10):
-                    friend_scraper.print_statistics()
+    print(f"[SUCCESS] Đăng nhập thành công cho {account['name']}")
 
-            # Nhắn tin bạn bè
-            print(f"[INFO] Bắt đầu nhắn tin bạn bè cho {account['name']}")
-            message_manager = messageFriend.MessageFriendManager(
+    # Menu chức năng cho account này
+    while True:
+        choice = show_feature_menu()
+
+        if choice == "1":
+            addNewFriend.runAddFriend(groups, driver, max_scroll=2, max_requests=3)
+
+        elif choice == "2":
+            print(f"[INFO] Bắt đầu chấp nhận lời mời kết bạn cho {account['name']}")
+            stats = acceptFriend.runAcceptFriend(driver, max_accept=100)
+            print(f"[RESULT] Chấp nhận thành công {stats['successful_accepts']}/{stats['total_found']}")
+
+        elif choice == "3":
+            print(f"[INFO] Nhắn tin bạn bè cho {account['name']}")
+            msg_manager = messageFriend.MessageFriendManager(
                 friends_csv_path=f"data/friends/friends_{account['id']}.csv",
                 messages_csv_path="data/content/messages.csv",
                 progress_file=f"data/progress/message_progress_{account['id']}.json",
             )
+            if not msg_manager.progress_data.get("teams"):
+                msg_manager.create_teams(team_size=20)
+            msg_manager.run_daily_messaging(driver, target_count=10)
+            msg_manager.print_statistics()
 
-            # Tạo đội nếu chưa có
-            if not message_manager.progress_data.get("teams"):
-                message_manager.create_teams(team_size=20)
+        elif choice == "4":
+            print(f"[INFO] Đăng bài cho {account['name']}")
+            postNews.run_post(driver, "data/content/content.csv")
 
-            # Chạy nhắn tin hàng ngày
-            message_manager.run_daily_messaging(driver, target_count=10)
-            message_manager.print_statistics()
+        elif choice == "5":
+            print(f"[INFO] Chia sẻ bài viết vào nhóm cho {account['name']}")
+            shareGroup.run_share(driver, groups, content_path="data/content/content.csv")
 
-            time.sleep(5)
+        elif choice == "6":
+            print(f"[INFO] Bình luận nhóm cho {account['name']}")
+            commentGroup.run_comment(driver, groups, content_path="data/content/content.csv")
+
+        elif choice == "0":
+            print(f"[INFO] Đăng xuất {account['name']}")
             driver.quit()
+            break
         else:
-            print(f"[ERROR] Đăng nhập thất bại cho {account['name']}")
+            print("[ERROR] Lựa chọn không hợp lệ.")
 
-        print("\n" + "=" * 30 + "\n")
+
+def main():
+    accounts = pd.read_csv("data/account/account.csv")
+    groups = pd.read_csv("data/group/group.csv")
+
+    while True:
+        acc_choice = show_account_menu(accounts)
+
+        if acc_choice == "-1":
+            print("Thoát chương trình.")
+            break
+
+        try:
+            acc_choice = int(acc_choice) - 1
+            account = accounts.iloc[acc_choice]
+        except (ValueError, IndexError):
+            print("[ERROR] Lựa chọn không hợp lệ.")
+            continue
+
+        handle_account(account, groups)
 
 
 if __name__ == "__main__":

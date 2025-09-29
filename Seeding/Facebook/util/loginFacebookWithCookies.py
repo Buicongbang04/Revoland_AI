@@ -27,35 +27,6 @@ def get_driver():
     service = Service(ChromeDriverManager().install())
     return webdriver.Chrome(service=service, options=chrome_options)
 
-
-def close_popup(driver):
-    try:
-        # Tìm và đóng popup "Lúc khác"
-        later = WebDriverWait(driver, 3).until(
-            EC.element_to_be_clickable(
-                (
-                    By.XPATH,
-                    "//span[text()='Lúc khác' or text()='Not now']/ancestor::div[@role='button']",
-                )
-            )
-        )
-        later.click()
-        print("[INFO] Đã tắt popup (Lúc khác)")
-    except:
-        try:
-            # Tìm và đóng popup "X"
-            close_btn = WebDriverWait(driver, 2).until(
-                EC.element_to_be_clickable(
-                    (By.XPATH, "//div[@aria-label='Đóng' or @aria-label='Close']")
-                )
-            )
-            time.sleep(random.uniform(2, 3))
-            close_btn.click()
-            print("[INFO] Đã tắt popup (X)")
-        except:
-            pass
-
-
 def login_with_cookies(driver, cookie_file):
     print(f"[INFO] Đang đăng nhập với cookie: {cookie_file}")
     try:
@@ -79,12 +50,11 @@ def login_with_cookies(driver, cookie_file):
                 driver.add_cookie(cookie)
             except Exception as e:
                 print(f"[WARNING] Cookie lỗi: {cookie.get('name')}, {e}")
-
+        driver.refresh()
+        webdriver.ActionChains(driver).send_keys(Keys.ESCAPE).perform()
         if "login" in driver.current_url:
             print("[ERROR] Cookie sai hoặc hết hạn!")
             return False
-
-        print("[INFO] Đăng nhập thành công \n")
         return driver
 
     except Exception as e:
@@ -96,5 +66,5 @@ def runLogin(pathAccCookie):
     print("[INFO] Bắt đầu đăng nhập vào Facebook")
     driver = get_driver()
     driver = login_with_cookies(driver, pathAccCookie)
-    time.sleep(2)
+    time.sleep(3)
     return driver
